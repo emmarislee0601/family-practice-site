@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#315c78"><title>家庭學習刷題站</title><link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#315c78"><title>家庭學習刷題站</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="batch.css">
 </head>
 <body>
 <header class="topbar"><div class="brand"><span class="brand-mark">✦</span><div><strong>家庭學習刷題站</strong><small>每天一點點，累積大進步</small></div></div><div class="top-actions"><span id="today"></span><button class="ghost" id="resetData">重設本機資料</button></div></header>
@@ -10,8 +10,18 @@
 <section class="welcome"><div><p class="eyebrow">LEARN · PRACTICE · GROW</p><h1>今天想挑戰哪一科？</h1><p>選擇學生、年級與科目，開始你的每日練習。</p></div><div class="welcome-art">✎<span>✦</span></div></section>
 <section class="toolbar card"><div class="field"><label for="student">學習學生</label><select id="student"><option value="ZOEY">ZOEY</option><option value="PEGGY">PEGGY</option></select></div><div class="field"><label for="grade">年級</label><select id="grade"><option value="G5">國小五年級</option><option value="G6">國小六年級</option><option value="J1">國中一年級</option><option value="J2">國中二年級</option><option value="J3">國中三年級</option></select></div><div class="field"><label for="subject">科目</label><select id="subject"></select></div><div class="field"><label>本次測驗</label><div class="fixed-count">固定 10 題</div></div><button class="primary" id="start">開始刷題 <span>→</span></button></section>
 <section class="stats" id="stats"></section>
+<section class="card bq-section" id="bqSection"><div class="section-head"><h2 id="bqTitle">📦 匯入題庫測驗</h2></div><p class="muted">家長匯入的題庫會出現在這裡。依上方選的學生和年級顯示；ZOEY、PEGGY 的成績分開記錄。</p><div id="bqBody" class="bq-body"></div></section>
+
 <section class="content-grid"><section class="card practice" id="practice"><div class="empty-state"><div class="empty-icon">✦</div><h2>準備好開始了嗎？</h2><p>選好年級與科目，按下「開始刷題」開始挑戰。</p></div></section>
 <aside class="side-col"><section class="card"><div class="section-head"><h3>📚 科目與版本</h3></div><div id="versionInfo" class="version-list"></div></section><section class="card"><div class="section-head"><h3>⭐ 我的學習紀錄</h3><span class="muted" id="recordStudent"></span></div><div id="recordSummary"></div></section></aside></section>
 <section class="card wrong-section"><div class="section-head"><div><h2>錯題本</h2><p class="muted">答錯的題目會自動收錄在這裡</p></div><button class="outline" id="reviewWrong">開始複習</button></div><div id="wrongList" class="wrong-list"><p class="muted">目前還沒有錯題，繼續保持！</p></div></section>
+<details class="card bq-parent" id="bqParent"><summary><b>🔧 家長區：匯入題庫、匯出成績、備份</b></summary>
+<div class="bq-parent-body">
+<h3>1. 匯入題庫 JSON</h3><p class="muted">選擇 AI 做好的題庫檔，或把 JSON 內容整段貼進下面的框。格式說明見 repo 裡的「題庫格式說明.md」。</p>
+<input type="file" id="bqFile" accept=".json,application/json"><textarea id="bqPaste" rows="5" placeholder="或把題庫 JSON 貼在這裡"></textarea><button class="primary" id="bqImportBtn">匯入貼上的 JSON</button><p id="bqImportMsg" class="bq-msg" aria-live="polite"></p>
+<h3>2. 已匯入的題庫／匯出成績</h3><p class="muted">「匯出成績」會下載這份題庫的作答紀錄、再想一次紀錄和離開紀錄，交給 AI 分析後再出下一批題目。</p><div id="bqBanks"></div>
+<h3>3. 備份（換裝置或清除瀏覽器前一定要做）</h3><p class="muted">紀錄只存在這台裝置的瀏覽器。匯入備份只會補上沒有的資料，不會覆蓋已經交卷的紀錄。</p>
+<div class="bq-pbtns"><button class="outline" id="bqBackup">匯出完整備份</button><label class="outline bq-filebtn">匯入備份檔<input type="file" id="bqRestore" accept=".json,application/json" hidden></label></div>
+</div></details>
 <footer>題庫包含原創示範題，以及依使用者提供之試卷整理的題目。已匯入：五年級社會 28 題（民權國小 114 學年度上學期期中評量；答案依題目卷內標示）。解析為輔助說明，請以老師講解及正式教材為準。每次測驗從不同題目中抽 10 題，不足 10 題時不會重複湊題。學習紀錄儲存在目前裝置的瀏覽器中。</footer>
-</main><script src="app.js"></script></body></html>
+</main><script src="app.js"></script><script src="batch.js"></script></body></html>

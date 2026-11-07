@@ -1,0 +1,84 @@
+/* 匯入題庫測驗 */
+.bq-section, .bq-parent { margin-top: 18px; }
+.bq-body { margin-top: 14px; }
+.bq-bank { border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+.bq-bank.archived { opacity: .65; }
+.bq-bank-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.bq-subject { padding: 10px 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+.bq-rounds { display: flex; flex-wrap: wrap; gap: 8px; }
+.bq-round { padding: 9px 13px; font-size: 14px; }
+.bq-round:disabled { opacity: .4; cursor: not-allowed; }
+.bq-archived summary { cursor: pointer; color: var(--muted); margin: 6px 0; }
+
+.bq-dots { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.bq-dot { width: 34px; height: 34px; border-radius: 9px; border: 1px solid var(--line); background: #fff; cursor: pointer; font: inherit; font-size: 13px; }
+.bq-dot.done { background: var(--blue2); border-color: #9bb4c3; }
+.bq-dot.ok { background: #edf7f1; border-color: #80b49a; }
+.bq-dot.no { background: #fff1ef; border-color: #d99a91; }
+.bq-dot.now { outline: 3px solid var(--blue); }
+.bq-prompt { white-space: pre-wrap; }
+.question.bq-prompt { font-size: 21px; }
+.bq-figure { margin: 0 0 16px; text-align: center; }
+.bq-figure img { max-width: 100%; max-height: 360px; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.bq-figure figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.bq-fill { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.bq-fill input, .tutor-input input { height: 46px; border: 1px solid #cbd9e1; border-radius: 10px; padding: 0 12px; font: inherit; font-size: 18px; color: var(--ink); max-width: 360px; }
+.bq-lesson { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 10px 14px; margin-bottom: 12px; line-height: 1.75; }
+.bq-lesson summary { cursor: pointer; font-weight: 700; }
+.bq-lesson p { white-space: pre-wrap; margin: 8px 0 0; }
+.bq-nav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.bq-nav button:disabled { opacity: .4; }
+.bq-note { margin-top: 10px; }
+.bq-finish .score { font-size: 42px; }
+.bq-remind { background: #fff7ed; border: 1px solid #fdba74; padding: 10px; border-radius: 10px; color: #9a3412 !important; }
+.bq-good { color: #166534 !important; font-weight: 700; }
+.bq-list { display: grid; gap: 6px; }
+.bq-row { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.bq-row.no { border-color: #e8b4ad; }
+.bq-row-head { width: 100%; display: grid; grid-template-columns: 80px 1fr auto; gap: 10px; align-items: center; text-align: left; background: #fff; border: 0; padding: 11px 13px; font: inherit; font-size: 14px; cursor: pointer; }
+.bq-row.ok .bq-row-head span:first-child { color: #2f7a52; font-weight: 700; }
+.bq-row.no .bq-row-head span:first-child { color: var(--red); font-weight: 700; }
+.bq-row-prompt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bq-row-body { padding: 0 14px 14px; line-height: 1.7; }
+.bq-optlist { margin: 6px 0 0; }
+
+.bq-parent summary { cursor: pointer; font-size: 16px; }
+.bq-parent-body h3 { font-size: 15px; margin: 18px 0 4px; }
+.bq-parent-body textarea { width: 100%; margin: 8px 0; border: 1px solid var(--line); border-radius: 10px; padding: 10px; font: 13px ui-monospace, monospace; }
+.bq-msg { font-size: 14px; min-height: 1em; }
+.bq-msg.ok { color: #166534; }
+.bq-msg.bad { color: var(--red); }
+.bq-pbank { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; flex-wrap: wrap; }
+.bq-pbtns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.bq-pbtns button, .bq-filebtn { padding: 8px 12px; font-size: 13px; }
+.bq-filebtn { display: inline-block; cursor: pointer; border-radius: 10px; }
+
+/* 家教講解 */
+.tutor { display: grid; gap: 10px; margin-top: 14px; line-height: 1.75; font-size: 1.02rem; }
+.tutor p { margin: 4px 0; }
+.tutor-wrong { border-left: 4px solid #dc2626; background: #fef2f2; padding: 8px 12px; border-radius: 0 8px 8px 0; }
+.tutor-feedback { color: #991b1b; }
+.tutor-hint { border: 2px dashed #f59e0b; background: #fffbeb; padding: 12px; border-radius: 12px; }
+.tutor-lead { font-weight: 700; color: #92400e; }
+.tutor-tag { display: inline-block; font-weight: 700; margin-right: 8px; color: #1e3a8a; }
+.tutor-options { display: grid; gap: 8px; margin: 8px 0; }
+.tutor-options button { text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font: inherit; cursor: pointer; }
+.tutor-options button:disabled { opacity: .45; cursor: not-allowed; }
+.tutor-options button.selected { outline: 3px solid #2563eb; }
+.tutor-input { display: grid; gap: 4px; }
+.tutor-error { color: #b91c1c; font-size: .9rem; }
+.tutor-full { border: 1px solid #cbd5e1; background: #f8fafc; padding: 12px 14px; border-radius: 12px; }
+.tutor-full h4 { margin: 12px 0 4px; }
+.tutor-good { color: #166534; font-weight: 700; }
+.tutor-answer { font-size: 1.1rem; }
+.tutor-rule { background: #eff6ff; border-radius: 8px; padding: 6px 10px; }
+.lesson-card { background: #fffbeb; border-radius: 8px; padding: 8px 10px; white-space: pre-wrap; }
+.button-row { margin-top: 8px; }
+
+@media (max-width: 520px) {
+  .bq-row-head { grid-template-columns: 70px 1fr; }
+  .bq-row-head span:last-child { grid-column: span 2; }
+  .question.bq-prompt { font-size: 18px; }
+  .bq-nav { width: 100%; justify-content: space-between; }
+  .quiz-actions { flex-wrap: wrap; }
+}
